@@ -1,0 +1,726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E8E6C1B2139259500897899 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C1A2139259500897899 /* AppDelegate.m */; };
+		0E8E6C1E2139259500897899 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C1D2139259500897899 /* ViewController.m */; };
+		0E8E6C212139259500897899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C1F2139259500897899 /* Main.storyboard */; };
+		0E8E6C23213925AA00897899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C22213925AA00897899 /* Assets.xcassets */; };
+		0E8E6C26213925AA00897899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C24213925AA00897899 /* LaunchScreen.storyboard */; };
+		0E8E6C29213925AA00897899 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C28213925AA00897899 /* main.m */; };
+		0E8E6C33213925AA00897899 /* DSKeyboardKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C32213925AA00897899 /* DSKeyboardKitTests.m */; };
+		0E8E6C3E213925AA00897899 /* DSKeyboardKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C3D213925AA00897899 /* DSKeyboardKitUITests.m */; };
+		0E8E6C50213928EA00897899 /* DSInputScrollTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C4D213928E900897899 /* DSInputScrollTextView.m */; };
+		0E8E6C51213928EA00897899 /* DSInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C4F213928EA00897899 /* DSInputTextView.m */; };
+		0E8E6C54213929E000897899 /* UIView+DSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C53213929E000897899 /* UIView+DSCategory.m */; };
+		0E8E6C57213935AA00897899 /* DSChatKeyboardConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C56213935AA00897899 /* DSChatKeyboardConfig.m */; };
+		0E8E6C6421393A1700897899 /* DSKeyboardEmoticonConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C6321393A1700897899 /* DSKeyboardEmoticonConfig.m */; };
+		0E8E6C6B21393F5400897899 /* DSChatKeyboardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C6A21393F5400897899 /* DSChatKeyboardView.m */; };
+		0E8E6C712139461100897899 /* DSInputToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C6F2139461000897899 /* DSInputToolView.m */; };
+		0E8E6C85213950A300897899 /* input_text_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C73213950A100897899 /* input_text_bg@2x.png */; };
+		0E8E6C86213950A300897899 /* input_emoji_highlight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C74213950A100897899 /* input_emoji_highlight@3x.png */; };
+		0E8E6C87213950A300897899 /* input_text_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C75213950A100897899 /* input_text_bg@3x.png */; };
+		0E8E6C88213950A300897899 /* input_keyboard_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C76213950A200897899 /* input_keyboard_highlight@2x.png */; };
+		0E8E6C89213950A300897899 /* input_more_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C77213950A200897899 /* input_more_normal@3x.png */; };
+		0E8E6C8A213950A300897899 /* input_emoji_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C78213950A200897899 /* input_emoji_highlight@2x.png */; };
+		0E8E6C8B213950A300897899 /* input_keyboard_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C79213950A200897899 /* input_keyboard_normal@3x.png */; };
+		0E8E6C8C213950A300897899 /* input_more_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C7A213950A200897899 /* input_more_highlight@2x.png */; };
+		0E8E6C8D213950A300897899 /* input_voice_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C7B213950A200897899 /* input_voice_normal@2x.png */; };
+		0E8E6C8E213950A300897899 /* input_keyboard_highlight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C7C213950A200897899 /* input_keyboard_highlight@3x.png */; };
+		0E8E6C8F213950A300897899 /* input_voice_highlight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C7D213950A300897899 /* input_voice_highlight@3x.png */; };
+		0E8E6C90213950A300897899 /* input_more_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C7E213950A300897899 /* input_more_normal@2x.png */; };
+		0E8E6C91213950A300897899 /* input_voice_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C7F213950A300897899 /* input_voice_highlight@2x.png */; };
+		0E8E6C92213950A300897899 /* input_emoji_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C80213950A300897899 /* input_emoji_normal@3x.png */; };
+		0E8E6C93213950A300897899 /* input_voice_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C81213950A300897899 /* input_voice_normal@3x.png */; };
+		0E8E6C94213950A300897899 /* input_emoji_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C82213950A300897899 /* input_emoji_normal@2x.png */; };
+		0E8E6C95213950A300897899 /* input_keyboard_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C83213950A300897899 /* input_keyboard_normal@2x.png */; };
+		0E8E6C96213950A300897899 /* input_more_highlight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C84213950A300897899 /* input_more_highlight@3x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E8E6C2F213925AA00897899 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E8E6C0E2139259500897899 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E8E6C152139259500897899;
+			remoteInfo = DSKeyboardKit;
+		};
+		0E8E6C3A213925AA00897899 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E8E6C0E2139259500897899 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E8E6C152139259500897899;
+			remoteInfo = DSKeyboardKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E8E6C162139259500897899 /* DSKeyboardKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSKeyboardKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E8E6C192139259500897899 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0E8E6C1A2139259500897899 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0E8E6C1C2139259500897899 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0E8E6C1D2139259500897899 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0E8E6C202139259500897899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0E8E6C22213925AA00897899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0E8E6C25213925AA00897899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0E8E6C27213925AA00897899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E8E6C28213925AA00897899 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0E8E6C2E213925AA00897899 /* DSKeyboardKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DSKeyboardKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E8E6C32213925AA00897899 /* DSKeyboardKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyboardKitTests.m; sourceTree = "<group>"; };
+		0E8E6C34213925AA00897899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E8E6C39213925AA00897899 /* DSKeyboardKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DSKeyboardKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E8E6C3D213925AA00897899 /* DSKeyboardKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyboardKitUITests.m; sourceTree = "<group>"; };
+		0E8E6C3F213925AA00897899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E8E6C4C213928E900897899 /* DSInputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSInputTextView.h; sourceTree = "<group>"; };
+		0E8E6C4D213928E900897899 /* DSInputScrollTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSInputScrollTextView.m; sourceTree = "<group>"; };
+		0E8E6C4E213928EA00897899 /* DSInputScrollTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSInputScrollTextView.h; sourceTree = "<group>"; };
+		0E8E6C4F213928EA00897899 /* DSInputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSInputTextView.m; sourceTree = "<group>"; };
+		0E8E6C52213929E000897899 /* UIView+DSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DSCategory.h"; sourceTree = "<group>"; };
+		0E8E6C53213929E000897899 /* UIView+DSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DSCategory.m"; sourceTree = "<group>"; };
+		0E8E6C55213935AA00897899 /* DSChatKeyboardConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKeyboardConfig.h; sourceTree = "<group>"; };
+		0E8E6C56213935AA00897899 /* DSChatKeyboardConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKeyboardConfig.m; sourceTree = "<group>"; };
+		0E8E6C6221393A1700897899 /* DSKeyboardEmoticonConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSKeyboardEmoticonConfig.h; sourceTree = "<group>"; };
+		0E8E6C6321393A1700897899 /* DSKeyboardEmoticonConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyboardEmoticonConfig.m; sourceTree = "<group>"; };
+		0E8E6C6921393F5400897899 /* DSChatKeyboardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChatKeyboardView.h; sourceTree = "<group>"; };
+		0E8E6C6A21393F5400897899 /* DSChatKeyboardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChatKeyboardView.m; sourceTree = "<group>"; };
+		0E8E6C6F2139461000897899 /* DSInputToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSInputToolView.m; sourceTree = "<group>"; };
+		0E8E6C702139461000897899 /* DSInputToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSInputToolView.h; sourceTree = "<group>"; };
+		0E8E6C73213950A100897899 /* input_text_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_text_bg@2x.png"; sourceTree = "<group>"; };
+		0E8E6C74213950A100897899 /* input_emoji_highlight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_emoji_highlight@3x.png"; sourceTree = "<group>"; };
+		0E8E6C75213950A100897899 /* input_text_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_text_bg@3x.png"; sourceTree = "<group>"; };
+		0E8E6C76213950A200897899 /* input_keyboard_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_keyboard_highlight@2x.png"; sourceTree = "<group>"; };
+		0E8E6C77213950A200897899 /* input_more_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_more_normal@3x.png"; sourceTree = "<group>"; };
+		0E8E6C78213950A200897899 /* input_emoji_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_emoji_highlight@2x.png"; sourceTree = "<group>"; };
+		0E8E6C79213950A200897899 /* input_keyboard_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_keyboard_normal@3x.png"; sourceTree = "<group>"; };
+		0E8E6C7A213950A200897899 /* input_more_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_more_highlight@2x.png"; sourceTree = "<group>"; };
+		0E8E6C7B213950A200897899 /* input_voice_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_voice_normal@2x.png"; sourceTree = "<group>"; };
+		0E8E6C7C213950A200897899 /* input_keyboard_highlight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_keyboard_highlight@3x.png"; sourceTree = "<group>"; };
+		0E8E6C7D213950A300897899 /* input_voice_highlight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_voice_highlight@3x.png"; sourceTree = "<group>"; };
+		0E8E6C7E213950A300897899 /* input_more_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_more_normal@2x.png"; sourceTree = "<group>"; };
+		0E8E6C7F213950A300897899 /* input_voice_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_voice_highlight@2x.png"; sourceTree = "<group>"; };
+		0E8E6C80213950A300897899 /* input_emoji_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_emoji_normal@3x.png"; sourceTree = "<group>"; };
+		0E8E6C81213950A300897899 /* input_voice_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_voice_normal@3x.png"; sourceTree = "<group>"; };
+		0E8E6C82213950A300897899 /* input_emoji_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_emoji_normal@2x.png"; sourceTree = "<group>"; };
+		0E8E6C83213950A300897899 /* input_keyboard_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_keyboard_normal@2x.png"; sourceTree = "<group>"; };
+		0E8E6C84213950A300897899 /* input_more_highlight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_more_highlight@3x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E8E6C132139259500897899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E8E6C2B213925AA00897899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E8E6C36213925AA00897899 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E8E6C0D2139259500897899 = {
+			isa = PBXGroup;
+			children = (
+				0E8E6C182139259500897899 /* DSKeyboardKit */,
+				0E8E6C31213925AA00897899 /* DSKeyboardKitTests */,
+				0E8E6C3C213925AA00897899 /* DSKeyboardKitUITests */,
+				0E8E6C172139259500897899 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0E8E6C172139259500897899 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E8E6C162139259500897899 /* DSKeyboardKit.app */,
+				0E8E6C2E213925AA00897899 /* DSKeyboardKitTests.xctest */,
+				0E8E6C39213925AA00897899 /* DSKeyboardKitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E8E6C182139259500897899 /* DSKeyboardKit */ = {
+			isa = PBXGroup;
+			children = (
+				0E8E6C4B2139262600897899 /* DSKeyboardKit */,
+				0E8E6C192139259500897899 /* AppDelegate.h */,
+				0E8E6C1A2139259500897899 /* AppDelegate.m */,
+				0E8E6C1C2139259500897899 /* ViewController.h */,
+				0E8E6C1D2139259500897899 /* ViewController.m */,
+				0E8E6C1F2139259500897899 /* Main.storyboard */,
+				0E8E6C22213925AA00897899 /* Assets.xcassets */,
+				0E8E6C24213925AA00897899 /* LaunchScreen.storyboard */,
+				0E8E6C27213925AA00897899 /* Info.plist */,
+				0E8E6C28213925AA00897899 /* main.m */,
+			);
+			path = DSKeyboardKit;
+			sourceTree = "<group>";
+		};
+		0E8E6C31213925AA00897899 /* DSKeyboardKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E8E6C32213925AA00897899 /* DSKeyboardKitTests.m */,
+				0E8E6C34213925AA00897899 /* Info.plist */,
+			);
+			path = DSKeyboardKitTests;
+			sourceTree = "<group>";
+		};
+		0E8E6C3C213925AA00897899 /* DSKeyboardKitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0E8E6C3D213925AA00897899 /* DSKeyboardKitUITests.m */,
+				0E8E6C3F213925AA00897899 /* Info.plist */,
+			);
+			path = DSKeyboardKitUITests;
+			sourceTree = "<group>";
+		};
+		0E8E6C4B2139262600897899 /* DSKeyboardKit */ = {
+			isa = PBXGroup;
+			children = (
+				0E8E6C722139507900897899 /* Resources */,
+				0E8E6C6821393F2800897899 /* Category */,
+				0E8E6C58213935BA00897899 /* Config */,
+				0E8E6C6921393F5400897899 /* DSChatKeyboardView.h */,
+				0E8E6C6A21393F5400897899 /* DSChatKeyboardView.m */,
+				0E8E6C702139461000897899 /* DSInputToolView.h */,
+				0E8E6C6F2139461000897899 /* DSInputToolView.m */,
+				0E8E6C4E213928EA00897899 /* DSInputScrollTextView.h */,
+				0E8E6C4D213928E900897899 /* DSInputScrollTextView.m */,
+				0E8E6C4C213928E900897899 /* DSInputTextView.h */,
+				0E8E6C4F213928EA00897899 /* DSInputTextView.m */,
+			);
+			path = DSKeyboardKit;
+			sourceTree = "<group>";
+		};
+		0E8E6C58213935BA00897899 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				0E8E6C6221393A1700897899 /* DSKeyboardEmoticonConfig.h */,
+				0E8E6C6321393A1700897899 /* DSKeyboardEmoticonConfig.m */,
+				0E8E6C55213935AA00897899 /* DSChatKeyboardConfig.h */,
+				0E8E6C56213935AA00897899 /* DSChatKeyboardConfig.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		0E8E6C6821393F2800897899 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				0E8E6C52213929E000897899 /* UIView+DSCategory.h */,
+				0E8E6C53213929E000897899 /* UIView+DSCategory.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		0E8E6C722139507900897899 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0E8E6C78213950A200897899 /* input_emoji_highlight@2x.png */,
+				0E8E6C74213950A100897899 /* input_emoji_highlight@3x.png */,
+				0E8E6C82213950A300897899 /* input_emoji_normal@2x.png */,
+				0E8E6C80213950A300897899 /* input_emoji_normal@3x.png */,
+				0E8E6C76213950A200897899 /* input_keyboard_highlight@2x.png */,
+				0E8E6C7C213950A200897899 /* input_keyboard_highlight@3x.png */,
+				0E8E6C83213950A300897899 /* input_keyboard_normal@2x.png */,
+				0E8E6C79213950A200897899 /* input_keyboard_normal@3x.png */,
+				0E8E6C7A213950A200897899 /* input_more_highlight@2x.png */,
+				0E8E6C84213950A300897899 /* input_more_highlight@3x.png */,
+				0E8E6C7E213950A300897899 /* input_more_normal@2x.png */,
+				0E8E6C77213950A200897899 /* input_more_normal@3x.png */,
+				0E8E6C73213950A100897899 /* input_text_bg@2x.png */,
+				0E8E6C75213950A100897899 /* input_text_bg@3x.png */,
+				0E8E6C7F213950A300897899 /* input_voice_highlight@2x.png */,
+				0E8E6C7D213950A300897899 /* input_voice_highlight@3x.png */,
+				0E8E6C7B213950A200897899 /* input_voice_normal@2x.png */,
+				0E8E6C81213950A300897899 /* input_voice_normal@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E8E6C152139259500897899 /* DSKeyboardKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E8E6C42213925AA00897899 /* Build configuration list for PBXNativeTarget "DSKeyboardKit" */;
+			buildPhases = (
+				0E8E6C122139259500897899 /* Sources */,
+				0E8E6C132139259500897899 /* Frameworks */,
+				0E8E6C142139259500897899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DSKeyboardKit;
+			productName = DSKeyboardKit;
+			productReference = 0E8E6C162139259500897899 /* DSKeyboardKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0E8E6C2D213925AA00897899 /* DSKeyboardKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E8E6C45213925AA00897899 /* Build configuration list for PBXNativeTarget "DSKeyboardKitTests" */;
+			buildPhases = (
+				0E8E6C2A213925AA00897899 /* Sources */,
+				0E8E6C2B213925AA00897899 /* Frameworks */,
+				0E8E6C2C213925AA00897899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E8E6C30213925AA00897899 /* PBXTargetDependency */,
+			);
+			name = DSKeyboardKitTests;
+			productName = DSKeyboardKitTests;
+			productReference = 0E8E6C2E213925AA00897899 /* DSKeyboardKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0E8E6C38213925AA00897899 /* DSKeyboardKitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E8E6C48213925AA00897899 /* Build configuration list for PBXNativeTarget "DSKeyboardKitUITests" */;
+			buildPhases = (
+				0E8E6C35213925AA00897899 /* Sources */,
+				0E8E6C36213925AA00897899 /* Frameworks */,
+				0E8E6C37213925AA00897899 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E8E6C3B213925AA00897899 /* PBXTargetDependency */,
+			);
+			name = DSKeyboardKitUITests;
+			productName = DSKeyboardKitUITests;
+			productReference = 0E8E6C39213925AA00897899 /* DSKeyboardKitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E8E6C0E2139259500897899 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = HelloAda;
+				TargetAttributes = {
+					0E8E6C152139259500897899 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					0E8E6C2D213925AA00897899 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 0E8E6C152139259500897899;
+					};
+					0E8E6C38213925AA00897899 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 0E8E6C152139259500897899;
+					};
+				};
+			};
+			buildConfigurationList = 0E8E6C112139259500897899 /* Build configuration list for PBXProject "DSKeyboardKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0E8E6C0D2139259500897899;
+			productRefGroup = 0E8E6C172139259500897899 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E8E6C152139259500897899 /* DSKeyboardKit */,
+				0E8E6C2D213925AA00897899 /* DSKeyboardKitTests */,
+				0E8E6C38213925AA00897899 /* DSKeyboardKitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E8E6C142139259500897899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8E6C8C213950A300897899 /* input_more_highlight@2x.png in Resources */,
+				0E8E6C89213950A300897899 /* input_more_normal@3x.png in Resources */,
+				0E8E6C26213925AA00897899 /* LaunchScreen.storyboard in Resources */,
+				0E8E6C8B213950A300897899 /* input_keyboard_normal@3x.png in Resources */,
+				0E8E6C8F213950A300897899 /* input_voice_highlight@3x.png in Resources */,
+				0E8E6C91213950A300897899 /* input_voice_highlight@2x.png in Resources */,
+				0E8E6C85213950A300897899 /* input_text_bg@2x.png in Resources */,
+				0E8E6C23213925AA00897899 /* Assets.xcassets in Resources */,
+				0E8E6C212139259500897899 /* Main.storyboard in Resources */,
+				0E8E6C90213950A300897899 /* input_more_normal@2x.png in Resources */,
+				0E8E6C93213950A300897899 /* input_voice_normal@3x.png in Resources */,
+				0E8E6C8D213950A300897899 /* input_voice_normal@2x.png in Resources */,
+				0E8E6C92213950A300897899 /* input_emoji_normal@3x.png in Resources */,
+				0E8E6C8A213950A300897899 /* input_emoji_highlight@2x.png in Resources */,
+				0E8E6C87213950A300897899 /* input_text_bg@3x.png in Resources */,
+				0E8E6C86213950A300897899 /* input_emoji_highlight@3x.png in Resources */,
+				0E8E6C8E213950A300897899 /* input_keyboard_highlight@3x.png in Resources */,
+				0E8E6C95213950A300897899 /* input_keyboard_normal@2x.png in Resources */,
+				0E8E6C96213950A300897899 /* input_more_highlight@3x.png in Resources */,
+				0E8E6C94213950A300897899 /* input_emoji_normal@2x.png in Resources */,
+				0E8E6C88213950A300897899 /* input_keyboard_highlight@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E8E6C2C213925AA00897899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E8E6C37213925AA00897899 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E8E6C122139259500897899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8E6C6B21393F5400897899 /* DSChatKeyboardView.m in Sources */,
+				0E8E6C51213928EA00897899 /* DSInputTextView.m in Sources */,
+				0E8E6C54213929E000897899 /* UIView+DSCategory.m in Sources */,
+				0E8E6C6421393A1700897899 /* DSKeyboardEmoticonConfig.m in Sources */,
+				0E8E6C712139461100897899 /* DSInputToolView.m in Sources */,
+				0E8E6C50213928EA00897899 /* DSInputScrollTextView.m in Sources */,
+				0E8E6C1E2139259500897899 /* ViewController.m in Sources */,
+				0E8E6C57213935AA00897899 /* DSChatKeyboardConfig.m in Sources */,
+				0E8E6C29213925AA00897899 /* main.m in Sources */,
+				0E8E6C1B2139259500897899 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E8E6C2A213925AA00897899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8E6C33213925AA00897899 /* DSKeyboardKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E8E6C35213925AA00897899 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E8E6C3E213925AA00897899 /* DSKeyboardKitUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E8E6C30213925AA00897899 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E8E6C152139259500897899 /* DSKeyboardKit */;
+			targetProxy = 0E8E6C2F213925AA00897899 /* PBXContainerItemProxy */;
+		};
+		0E8E6C3B213925AA00897899 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E8E6C152139259500897899 /* DSKeyboardKit */;
+			targetProxy = 0E8E6C3A213925AA00897899 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0E8E6C1F2139259500897899 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E8E6C202139259500897899 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0E8E6C24213925AA00897899 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E8E6C25213925AA00897899 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0E8E6C40213925AA00897899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0E8E6C41213925AA00897899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0E8E6C43213925AA00897899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3WM4WM6Y4;
+				INFOPLIST_FILE = DSKeyboardKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "---.DSKeyboardKit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0E8E6C44213925AA00897899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M3WM4WM6Y4;
+				INFOPLIST_FILE = DSKeyboardKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "---.DSKeyboardKit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0E8E6C46213925AA00897899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DSKeyboardKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "---.DSKeyboardKitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DSKeyboardKit.app/DSKeyboardKit";
+			};
+			name = Debug;
+		};
+		0E8E6C47213925AA00897899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DSKeyboardKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "---.DSKeyboardKitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DSKeyboardKit.app/DSKeyboardKit";
+			};
+			name = Release;
+		};
+		0E8E6C49213925AA00897899 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DSKeyboardKitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "---.DSKeyboardKitUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DSKeyboardKit;
+			};
+			name = Debug;
+		};
+		0E8E6C4A213925AA00897899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DSKeyboardKitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "---.DSKeyboardKitUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DSKeyboardKit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E8E6C112139259500897899 /* Build configuration list for PBXProject "DSKeyboardKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E8E6C40213925AA00897899 /* Debug */,
+				0E8E6C41213925AA00897899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E8E6C42213925AA00897899 /* Build configuration list for PBXNativeTarget "DSKeyboardKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E8E6C43213925AA00897899 /* Debug */,
+				0E8E6C44213925AA00897899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E8E6C45213925AA00897899 /* Build configuration list for PBXNativeTarget "DSKeyboardKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E8E6C46213925AA00897899 /* Debug */,
+				0E8E6C47213925AA00897899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E8E6C48213925AA00897899 /* Build configuration list for PBXNativeTarget "DSKeyboardKitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E8E6C49213925AA00897899 /* Debug */,
+				0E8E6C4A213925AA00897899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0E8E6C0E2139259500897899 /* Project object */;
+}
