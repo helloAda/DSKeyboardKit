@@ -1,6 +1,6 @@
 //
 //  DSInputScrollTextView.h
-//  DSChatKit
+//  
 //
 //  Created by 黄铭达 on 2017/9/30.
 //  Copyright © 2017年 黄铭达. All rights reserved.

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E033871217EBF730063DA6F /* DSInputToolConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E033870217EBF730063DA6F /* DSInputToolConfig.m */; };
 		0E8E6C1B2139259500897899 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C1A2139259500897899 /* AppDelegate.m */; };
 		0E8E6C1E2139259500897899 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C1D2139259500897899 /* ViewController.m */; };
 		0E8E6C212139259500897899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C1F2139259500897899 /* Main.storyboard */; };
@@ -60,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E03386F217EBF730063DA6F /* DSInputToolConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputToolConfig.h; sourceTree = "<group>"; };
+		0E033870217EBF730063DA6F /* DSInputToolConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputToolConfig.m; sourceTree = "<group>"; };
 		0E8E6C162139259500897899 /* DSKeyboardKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSKeyboardKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8E6C192139259500897899 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E8E6C1A2139259500897899 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 				0E8E6C6321393A1700897899 /* DSKeyboardEmoticonConfig.m */,
 				0E8E6C55213935AA00897899 /* DSChatKeyboardConfig.h */,
 				0E8E6C56213935AA00897899 /* DSChatKeyboardConfig.m */,
+				0E03386F217EBF730063DA6F /* DSInputToolConfig.h */,
+				0E033870217EBF730063DA6F /* DSInputToolConfig.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -410,6 +415,7 @@
 				0E8E6C1E2139259500897899 /* ViewController.m in Sources */,
 				0E8E6C57213935AA00897899 /* DSChatKeyboardConfig.m in Sources */,
 				0E8E6C29213925AA00897899 /* main.m in Sources */,
+				0E033871217EBF730063DA6F /* DSInputToolConfig.m in Sources */,
 				0E8E6C1B2139259500897899 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
