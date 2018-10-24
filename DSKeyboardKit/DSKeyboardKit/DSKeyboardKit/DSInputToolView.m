@@ -32,6 +32,18 @@
 //输入文字框的背景图片
 @property (nonatomic, strong) UIImageView *inputTextBackImage;
 
+//声音按钮
+@property (nonatomic, strong) UIButton *voiceBtn;
+
+//表情按钮
+@property (nonatomic, strong) UIButton *emoticonBtn;
+
+//更多按钮
+@property (nonatomic, strong) UIButton *moreBtn;
+
+//记录声音按钮
+@property (nonatomic, strong) UIButton *recordBtn;
+
 @end
 
 @implementation DSInputToolView
@@ -48,9 +60,10 @@
 
 // 初始化
 - (void)setup {
-    self.types = [[NSArray alloc] init];
-    self.types = _config.toolItemsDic.allKeys;
-    
+    // 按顺序排好
+    self.types = [_config.toolItemsDic.allKeys sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return [obj1 compare:obj2];
+    }];
     // 声音按钮
     if ([self.types containsObject:@(DSInputToolItemTypeVoice)]) {
         NSArray *array = [NSArray arrayWithArray:[_config.toolItemsDic objectForKey:@(DSInputToolItemTypeVoice)]];
@@ -58,6 +71,7 @@
         _voiceBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_voiceBtn setImage:[UIImage imageNamed:array[0]] forState:UIControlStateNormal];
         [_voiceBtn setImage:[UIImage imageNamed:array[1]] forState:UIControlStateHighlighted];
+        [_voiceBtn addTarget:self action:@selector(onTapVoiceBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_voiceBtn sizeToFit];
         
         _recordBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -67,6 +81,11 @@
         _recordBtn.exclusiveTouch = YES;
         [_recordBtn setTitle:_config.recordTitle forState:UIControlStateNormal];
         _recordBtn.hidden = YES;
+        [_recordBtn addTarget:self action:@selector(onTapRecordBtnDown:) forControlEvents:UIControlEventTouchDown];
+        [_recordBtn addTarget:self action:@selector(onTapRecordBtnDragInside:) forControlEvents:UIControlEventTouchDragInside];
+        [_recordBtn addTarget:self action:@selector(onTapRecordBtnDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
+        [_recordBtn addTarget:self action:@selector(onTapRecordBtnUpInside:) forControlEvents:UIControlEventTouchUpInside];
+        [_recordBtn addTarget:self action:@selector(onTapRecordBtnUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
         [_recordBtn sizeToFit];
     }
 
@@ -74,10 +93,11 @@
     if ([self.types containsObject:@(DSInputToolItemTypeEmoticon)]) {
         NSArray *array = [NSArray arrayWithArray:[_config.toolItemsDic objectForKey:@(DSInputToolItemTypeEmoticon)]];
         if (array.count < 2) {return;} // 防止崩溃
-        _emojiBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_emojiBtn setImage:[UIImage imageNamed:array[0]] forState:UIControlStateNormal];
-        [_emojiBtn setImage:[UIImage imageNamed:array[1]] forState:UIControlStateHighlighted];
-        [_emojiBtn sizeToFit];
+        _emoticonBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_emoticonBtn setImage:[UIImage imageNamed:array[0]] forState:UIControlStateNormal];
+        [_emoticonBtn setImage:[UIImage imageNamed:array[1]] forState:UIControlStateHighlighted];
+        [_emoticonBtn addTarget:self action:@selector(onTapEmoticonBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_emoticonBtn sizeToFit];
     }
     
     // 更多按钮
@@ -87,23 +107,20 @@
         _moreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_moreBtn setImage:[UIImage imageNamed:array[0]] forState:UIControlStateNormal];
         [_moreBtn setImage:[UIImage imageNamed:array[1]] forState:UIControlStateHighlighted];
+        [_moreBtn addTarget:self action:@selector(onTapMoreBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_moreBtn sizeToFit];
     }
     
     // 文本框
-    if ([self.types containsObject:@(DSInputToolItemTypeText)]) {
-        _inputTextBackImage = [[UIImageView alloc] initWithFrame:CGRectZero];
-        [_inputTextBackImage setImage:[[UIImage imageNamed:@"input_text_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 80, 15, 80) resizingMode:UIImageResizingModeStretch]];
-        //文本输入框
-        _inputTextView = [[DSInputScrollTextView alloc] initWithFrame:CGRectZero];
-        _inputTextView.maxNumOfLines = 4;
-        _inputTextView.minNumOfLines = 1;
-        _inputTextView.textColor = [UIColor blackColor];
-        _inputTextView.backgroundColor = [UIColor clearColor];
-        _inputTextView.size = [_inputTextView intrinsicContentSize];
-        _inputTextView.textViewDelegate = self;
-        _inputTextView.returnKeyType = UIReturnKeySend;
-    }
+    _inputTextBackImage = [[UIImageView alloc] initWithFrame:CGRectZero];
+    [_inputTextBackImage setImage:[[UIImage imageNamed:@"input_text_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 80, 15, 80) resizingMode:UIImageResizingModeStretch]];
+    //文本输入框
+    _inputTextView = [[DSInputScrollTextView alloc] initWithFrame:CGRectZero];
+    _inputTextView.textColor = [UIColor blackColor];
+    _inputTextView.backgroundColor = [UIColor clearColor];
+    _inputTextView.size = [_inputTextView intrinsicContentSize];
+    _inputTextView.textViewDelegate = self;
+    _inputTextView.returnKeyType = UIReturnKeySend;
 }
 
 
@@ -127,13 +144,13 @@
     else {
         // 计算 inputTextView宽度
         [self adjustTextViewWidth:size.width];
-        // 计算完后 刷新布局
+        // 计算完后 刷新布局 自适应高度
         [self.inputTextView layoutIfNeeded];
         viewHeight = self.inputTextView.height;
         //ToolView 高度
         viewHeight = viewHeight + 2 * (BtnPadding + TextViewPadding);
     }
-    return CGSizeMake(self.width, viewHeight);
+    return CGSizeMake(size.width, viewHeight);
 }
 
 //计算inputTextView宽度
@@ -149,6 +166,7 @@
     }
     textViewWidth += (BtnPadding * (self.types.count + 1));
     self.inputTextView.width = width - textViewWidth - 2 * TextViewPadding;
+    
 }
 
 - (void)layoutSubviews {
@@ -191,6 +209,8 @@
         }
     }
 }
+
+#pragma mark - 对外接口 -
 
 - (BOOL)showsKeyboard {
     return [self.inputTextView isFirstResponder];
@@ -236,19 +256,52 @@
 
 //更新声音按钮图片
 - (void)updateVoiceBtnImage:(BOOL)selected {
-    [self.voiceBtn setImage:selected ? [UIImage imageNamed:@"input_voice_normal"] : [UIImage imageNamed:@"icon_toolview_keyboard_normal"] forState:UIControlStateNormal];
-        [self.voiceBtn setImage:selected ? [UIImage imageNamed:@"input_voice_highlight"] : [UIImage imageNamed:@"icon_toolview_keyboard_highlight"] forState:UIControlStateHighlighted];
+    NSArray *voiceImageArray = [NSArray arrayWithArray:[_config.toolItemsDic objectForKey:@(DSInputToolItemTypeVoice)]];
+    NSArray *keyboardImageArray = [NSArray arrayWithArray:[_config.toolItemsDic objectForKey:@(DSInputToolItemTypeText)]];
+    if (voiceImageArray.count < 2) {return;}
+    if (keyboardImageArray.count < 2) {return;}
+    [self.voiceBtn setImage:selected ? [UIImage imageNamed:voiceImageArray[0]] : [UIImage imageNamed:keyboardImageArray[0]] forState:UIControlStateNormal];
+        [self.voiceBtn setImage:selected ? [UIImage imageNamed:voiceImageArray[1]] : [UIImage imageNamed:keyboardImageArray[1]] forState:UIControlStateHighlighted];
 }
 
 //更新表情按钮图片
 - (void)updateEmojiBtnImage:(BOOL)selected {
-    [self.emojiBtn setImage:selected ? [UIImage imageNamed:@"input_emoji_normal"] : [UIImage imageNamed:@"icon_toolview_keyboard_normal"] forState:UIControlStateNormal];
-    [self.emojiBtn setImage:selected ? [UIImage imageNamed:@"input_emoji_highlight"] : [UIImage imageNamed:@"icon_toolview_keyboard_highlight"] forState:UIControlStateHighlighted];
+    NSArray *emoticonImageArray = [NSArray arrayWithArray:[_config.toolItemsDic objectForKey:@(DSInputToolItemTypeEmoticon)]];
+    NSArray *keyboardImageArray = [NSArray arrayWithArray:[_config.toolItemsDic objectForKey:@(DSInputToolItemTypeText)]];
+    if (emoticonImageArray.count < 2) {return;}
+    if (keyboardImageArray.count < 2) {return;}
+    [self.emoticonBtn setImage:selected ? [UIImage imageNamed:emoticonImageArray[0]] : [UIImage imageNamed:keyboardImageArray[0]] forState:UIControlStateNormal];
+    [self.emoticonBtn setImage:selected ? [UIImage imageNamed:emoticonImageArray[1]] : [UIImage imageNamed:keyboardImageArray[1]] forState:UIControlStateHighlighted];
 }
 
 
+- (NSRange)selectedRange {
+    return self.inputTextView.selectedRange;
+}
 
-#pragma mark ----  DSInputToolViewDelegate
+- (void)setPlaceHolder:(NSString *)placeHolder {
+    self.inputTextView.placeholderAttributedText = [[NSAttributedString alloc] initWithString:placeHolder attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
+}
+
+- (void)insertText:(NSString *)text {
+    NSRange range = self.inputTextView.selectedRange;
+    NSString *replaceText = [self.inputTextView.text stringByReplacingCharactersInRange:range withString:text];
+    range = NSMakeRange(range.location + text.length, 0);
+    self.inputTextView.text = replaceText;
+    self.inputTextView.selectedRange = range;
+}
+
+- (void)deleteText:(NSRange)range {
+    NSString *text = self.contentText;
+    if (range.location + range.length <= text.length && range.location != NSNotFound && range.length != 0) {
+        NSString *newText = [text stringByReplacingCharactersInRange:range withString:@""];
+        NSRange newRange = NSMakeRange(range.location, 0);
+        self.inputTextView.text = newText;
+        self.inputTextView.selectedRange = newRange;
+    }
+}
+
+#pragma mark - DSInputToolViewDelegate -
 
 - (BOOL)shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)replacementText {
     BOOL should = YES;
@@ -292,41 +345,65 @@
     }
 }
 
-#pragma mark -- 对外接口 --
-- (NSRange)selectedRange {
-    return self.inputTextView.selectedRange;
-}
+#pragma mark - 按钮事件 -
 
-- (void)setPlaceHolder:(NSString *)placeHolder {
-    self.inputTextView.placeholderAttributedText = [[NSAttributedString alloc] initWithString:placeHolder attributes:@{NSForegroundColorAttributeName:[UIColor grayColor]}];
+// 声音按钮
+- (void)onTapVoiceBtn:(UIButton *)btn {
+    if (self.itemDelegate && [self.itemDelegate respondsToSelector:@selector(onTapVoiceBtn:)]) {
+        [self.itemDelegate onTapVoiceBtn:btn];
+    }
 }
-
-- (void)insertText:(NSString *)text {
-    NSRange range = self.inputTextView.selectedRange;
-    NSString *replaceText = [self.inputTextView.text stringByReplacingCharactersInRange:range withString:text];
-    range = NSMakeRange(range.location + text.length, 0);
-    self.inputTextView.text = replaceText;
-    self.inputTextView.selectedRange = range;
+// 表情按钮
+- (void)onTapEmoticonBtn:(UIButton *)btn {
+    if (self.itemDelegate && [self.itemDelegate respondsToSelector:@selector(onTapEmoticonBtn:)]) {
+        [self.itemDelegate onTapEmoticonBtn:btn];
+    }
 }
-
-- (void)deleteText:(NSRange)range {
-    NSString *text = self.contentText;
-    if (range.location + range.length <= text.length && range.location != NSNotFound && range.length != 0) {
-        NSString *newText = [text stringByReplacingCharactersInRange:range withString:@""];
-        NSRange newRange = NSMakeRange(range.location, 0);
-        self.inputTextView.text = newText;
-        self.inputTextView.selectedRange = newRange;
+// 更多按钮
+- (void)onTapMoreBtn:(UIButton *)btn {
+    if (self.itemDelegate && [self.itemDelegate respondsToSelector:@selector(onTapMoreBtn:)]) {
+        [self.itemDelegate onTapMoreBtn:btn];
+    }
+}
+// 按下录音按钮，开始录音
+- (void)onTapRecordBtnDown:(UIButton *)btn {
+    if (self.itemDelegate && [self.itemDelegate respondsToSelector:@selector(onTapRecordBtnDown:)]) {
+        [self.itemDelegate onTapRecordBtnDown:btn];
+    }
+}
+// 在按钮内手指离开，录音完成
+- (void)onTapRecordBtnUpInside:(UIButton *)btn {
+    if (self.itemDelegate && [self.itemDelegate respondsToSelector:@selector(onTapRecordBtnUpInside:)]) {
+        [self.itemDelegate onTapRecordBtnUpInside:btn];
+    }
+}
+// 在按钮外手指离开，录音取消
+- (void)onTapRecordBtnUpOutside:(UIButton *)btn {
+    if (self.itemDelegate && [self.itemDelegate respondsToSelector:@selector(onTapRecordBtnUpOutside:)]) {
+        [self.itemDelegate onTapRecordBtnUpOutside:btn];
+    }
+}
+// 在按钮内手指还没离开， 提示 "手指上滑，取消发送"
+- (void)onTapRecordBtnDragInside:(UIButton *)btn {
+    if (self.itemDelegate && [self.itemDelegate respondsToSelector:@selector(onTapRecordBtnDragInside:)]) {
+        [self.itemDelegate onTapRecordBtnDragInside:btn];
+    }
+}
+// 在按钮外手指还没离开，提示 "松开手指，取消发送"
+- (void)onTapRecordBtnDragOutside:(UIButton *)btn {
+    if (self.itemDelegate && [self.itemDelegate respondsToSelector:@selector(onTapRecordBtnDragOutside:)]) {
+        [self.itemDelegate onTapRecordBtnDragOutside:btn];
     }
 }
 
 
-#pragma mark ---- get ----
+#pragma mark - get -
 - (UIView *)subViewForType:(DSInputToolItemType)type {
     if (!_itemViewDict) {
         _itemViewDict = @{
                   @(DSInputToolItemTypeVoice) : self.voiceBtn,
                   @(DSInputToolItemTypeText)  : self.inputTextBackImage,
-                  @(DSInputToolItemTypeEmoticon) : self.emojiBtn,
+                  @(DSInputToolItemTypeEmoticon) : self.emoticonBtn,
                   @(DSInputToolItemTypeMore)  : self.moreBtn
                   };
     }

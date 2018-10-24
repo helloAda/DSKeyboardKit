@@ -30,6 +30,7 @@ typedef NS_ENUM(NSInteger, DSInputToolItemType){
 /**
  工具栏按钮 默认 声音 文本 表情 更多
  eg: @(DSInputToolViewItemTypeVoice): @[@"正常状态下名称",@"高亮状态下名称"]
+ 文本一定要有。
  */
 @property (nonatomic, strong) NSDictionary <NSNumber *, NSArray *> *toolItemsDic;
 

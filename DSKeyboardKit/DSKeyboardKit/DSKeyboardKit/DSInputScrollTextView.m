@@ -111,7 +111,8 @@
     self.textView.backgroundColor = [UIColor clearColor];
     [self addSubview:self.textView];
     self.minHeight = self.height;
-    self.maxNumOfLines = 3;
+    self.maxNumOfLines = 5;
+    self.minNumOfLines = 1;
     self.showsVerticalScrollIndicator = NO;
 }
 
@@ -173,7 +174,7 @@
         }
     }
     
-    //让视图知道下次布局时需要重新计算
+    // 使视图的内部内容大小无效
     [self invalidateIntrinsicContentSize];
     
 }

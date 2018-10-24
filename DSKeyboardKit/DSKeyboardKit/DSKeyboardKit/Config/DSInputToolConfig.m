@@ -26,7 +26,7 @@
 - (void)setupConfig {
     _toolItemsDic = @{
                       @(DSInputToolItemTypeVoice): @[@"input_voice_normal", @"input_voice_highlight"],
-                      @(DSInputToolItemTypeText): @[],
+                      @(DSInputToolItemTypeText): @[@"input_keyboard_normal", @"input_keyboard_highlight"],
                       @(DSInputToolItemTypeEmoticon): @[@"input_emoji_normal", @"input_emoji_highlight"],
                       @(DSInputToolItemTypeMore): @[@"input_more_normal", @"input_more_highlight"]
                       };

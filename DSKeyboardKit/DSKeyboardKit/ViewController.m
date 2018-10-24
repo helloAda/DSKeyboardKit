@@ -7,9 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "DSInputScrollTextView.h"
 
-@interface ViewController () <DSInputScrollTextViewDelegate>
+@interface ViewController ()
 
 @end
 
@@ -17,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
 
 

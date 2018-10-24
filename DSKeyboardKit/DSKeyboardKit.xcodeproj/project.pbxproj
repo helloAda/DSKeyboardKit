@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0E033871217EBF730063DA6F /* DSInputToolConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E033870217EBF730063DA6F /* DSInputToolConfig.m */; };
+		0E398164218019CF006971C9 /* DSInputAudioRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E398162218019CF006971C9 /* DSInputAudioRecordView.m */; };
+		0E39816721805A0B006971C9 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E39816621805A0B006971C9 /* DemoViewController.m */; };
 		0E8E6C1B2139259500897899 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C1A2139259500897899 /* AppDelegate.m */; };
 		0E8E6C1E2139259500897899 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E8E6C1D2139259500897899 /* ViewController.m */; };
 		0E8E6C212139259500897899 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C1F2139259500897899 /* Main.storyboard */; };
@@ -63,6 +65,10 @@
 /* Begin PBXFileReference section */
 		0E03386F217EBF730063DA6F /* DSInputToolConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputToolConfig.h; sourceTree = "<group>"; };
 		0E033870217EBF730063DA6F /* DSInputToolConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputToolConfig.m; sourceTree = "<group>"; };
+		0E398162218019CF006971C9 /* DSInputAudioRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSInputAudioRecordView.m; sourceTree = "<group>"; };
+		0E398163218019CF006971C9 /* DSInputAudioRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSInputAudioRecordView.h; sourceTree = "<group>"; };
+		0E39816521805A0B006971C9 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		0E39816621805A0B006971C9 /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		0E8E6C162139259500897899 /* DSKeyboardKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSKeyboardKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E8E6C192139259500897899 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E8E6C1A2139259500897899 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -166,6 +172,8 @@
 				0E8E6C1A2139259500897899 /* AppDelegate.m */,
 				0E8E6C1C2139259500897899 /* ViewController.h */,
 				0E8E6C1D2139259500897899 /* ViewController.m */,
+				0E39816521805A0B006971C9 /* DemoViewController.h */,
+				0E39816621805A0B006971C9 /* DemoViewController.m */,
 				0E8E6C1F2139259500897899 /* Main.storyboard */,
 				0E8E6C22213925AA00897899 /* Assets.xcassets */,
 				0E8E6C24213925AA00897899 /* LaunchScreen.storyboard */,
@@ -203,6 +211,8 @@
 				0E8E6C6A21393F5400897899 /* DSChatKeyboardView.m */,
 				0E8E6C702139461000897899 /* DSInputToolView.h */,
 				0E8E6C6F2139461000897899 /* DSInputToolView.m */,
+				0E398163218019CF006971C9 /* DSInputAudioRecordView.h */,
+				0E398162218019CF006971C9 /* DSInputAudioRecordView.m */,
 				0E8E6C4E213928EA00897899 /* DSInputScrollTextView.h */,
 				0E8E6C4D213928E900897899 /* DSInputScrollTextView.m */,
 				0E8E6C4C213928E900897899 /* DSInputTextView.h */,
@@ -410,12 +420,14 @@
 				0E8E6C51213928EA00897899 /* DSInputTextView.m in Sources */,
 				0E8E6C54213929E000897899 /* UIView+DSCategory.m in Sources */,
 				0E8E6C6421393A1700897899 /* DSKeyboardEmoticonConfig.m in Sources */,
+				0E39816721805A0B006971C9 /* DemoViewController.m in Sources */,
 				0E8E6C712139461100897899 /* DSInputToolView.m in Sources */,
 				0E8E6C50213928EA00897899 /* DSInputScrollTextView.m in Sources */,
 				0E8E6C1E2139259500897899 /* ViewController.m in Sources */,
 				0E8E6C57213935AA00897899 /* DSChatKeyboardConfig.m in Sources */,
 				0E8E6C29213925AA00897899 /* main.m in Sources */,
 				0E033871217EBF730063DA6F /* DSInputToolConfig.m in Sources */,
+				0E398164218019CF006971C9 /* DSInputAudioRecordView.m in Sources */,
 				0E8E6C1B2139259500897899 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
