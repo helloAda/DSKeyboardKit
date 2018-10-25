@@ -108,7 +108,7 @@
     //禁止滚动
     self.textView.scrollEnabled = NO;
     self.textView.font = [UIFont systemFontOfSize:FONTSIZE];
-    self.textView.backgroundColor = [UIColor clearColor];
+    self.textView.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.textView];
     self.minHeight = self.height;
     self.maxNumOfLines = 5;
@@ -149,9 +149,13 @@
     //设置textView的Frame
     CGSize actualTextViewSize = [self.textView sizeThatFits:CGSizeMake(self.bounds.size.width, CGFLOAT_MAX)];
     self.textView.height = actualTextViewSize.height;
-    self.contentSize = actualTextViewSize;
-    
     CGRect oldScrollViewFrame = self.frame;
+    CGRect frame = self.bounds;
+    frame.origin = CGPointZero;
+    frame.size.height = actualTextViewSize.height;
+    self.textView.frame = frame;
+    self.contentSize = frame.size;
+    
     CGRect newScrollViewFrame = [self measureFrame:actualTextViewSize];
     
     //将要改变高度

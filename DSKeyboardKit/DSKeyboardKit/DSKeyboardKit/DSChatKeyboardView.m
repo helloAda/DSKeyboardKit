@@ -8,16 +8,23 @@
 
 #import "DSChatKeyboardView.h"
 #import "UIView+DSCategory.h"
+#import "DSInputAudioRecordView.h"
 
 @interface DSChatKeyboardView () <DSInputToolItemDelegate, DSInputToolViewDelegate>
 // 配置信息
 @property (nonatomic, strong) DSChatKeyboardConfig *config;
-//工具栏的状态
+// 工具栏的状态
 @property (nonatomic, assign) DSInputToolStatus toolStatus;
-//默认高度  216
+// 语音记录的状态
+@property (nonatomic, assign) DSInputAudioRecordState recordStatus;
+// 默认高度  216
 @property (nonatomic, assign) CGFloat defaultcontainerHeight;
-//键盘的top值 显示键盘时才有意义
+// 键盘的top值 显示键盘时才有意义
 @property (nonatomic, assign) CGFloat keyBoardFrameTop;
+
+
+// 记录语音的view
+@property (nonatomic, strong) DSInputAudioRecordView *audioRecordView;
 
 @end
 
@@ -28,6 +35,11 @@
     if (self) {
         _config = config;
         _defaultcontainerHeight = 216;
+        _recording = NO;
+        _recordStatus = DSInputAudioRecordEnd;
+        self.backgroundColor = [UIColor whiteColor];
+        // 监听键盘事件
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     }
     return self;
 }
@@ -41,18 +53,20 @@
     if (!_toolView) {
         _toolView = [[DSInputToolView alloc] initWithFrame:CGRectMake(0, 0, self.width, 0) config:_config.inputToolConfig];
         [self addSubview:_toolView];
+        
         [_toolView setPlaceHolder:@"输入消息"];
         _toolView.delegate = self;
+
         _toolView.itemDelegate = self;
         _toolView.size = [_toolView sizeThatFits:CGSizeMake(self.width, CGFLOAT_MAX)];
-        _toolView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self refreshStatus:DSInputToolStatusText];
+        _toolView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self sizeToFit];
     }
 }
 
 
-//刷新当前键盘状态
+// 刷新当前键盘状态
 - (void)refreshStatus:(DSInputToolStatus)status {
     self.toolStatus = status;
     [self.toolView update:status];

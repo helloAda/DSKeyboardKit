@@ -60,6 +60,7 @@
 
 // 初始化
 - (void)setup {
+    self.backgroundColor = [UIColor whiteColor];
     // 按顺序排好
     self.types = [_config.toolItemsDic.allKeys sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         return [obj1 compare:obj2];
@@ -77,15 +78,14 @@
         _recordBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_recordBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_recordBtn.titleLabel setFont:[UIFont systemFontOfSize:14.f]];
-        [_recordBtn setBackgroundImage:[[UIImage imageNamed:@"input_text_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(15,80,15,80) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
-        _recordBtn.exclusiveTouch = YES;
+        [_recordBtn setBackgroundImage:[[UIImage imageNamed:@"input_text_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(10 ,10, 10, 10) resizingMode:UIImageResizingModeStretch] forState:UIControlStateNormal];
         [_recordBtn setTitle:_config.recordTitle forState:UIControlStateNormal];
-        _recordBtn.hidden = YES;
         [_recordBtn addTarget:self action:@selector(onTapRecordBtnDown:) forControlEvents:UIControlEventTouchDown];
         [_recordBtn addTarget:self action:@selector(onTapRecordBtnDragInside:) forControlEvents:UIControlEventTouchDragInside];
         [_recordBtn addTarget:self action:@selector(onTapRecordBtnDragOutside:) forControlEvents:UIControlEventTouchDragOutside];
         [_recordBtn addTarget:self action:@selector(onTapRecordBtnUpInside:) forControlEvents:UIControlEventTouchUpInside];
         [_recordBtn addTarget:self action:@selector(onTapRecordBtnUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
+        _recordBtn.exclusiveTouch = YES;
         [_recordBtn sizeToFit];
     }
 
@@ -111,9 +111,9 @@
         [_moreBtn sizeToFit];
     }
     
-    // 文本框
+    // 文本框背景图片
     _inputTextBackImage = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [_inputTextBackImage setImage:[[UIImage imageNamed:@"input_text_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 80, 15, 80) resizingMode:UIImageResizingModeStretch]];
+    [_inputTextBackImage setImage:[[UIImage imageNamed:@"input_text_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(10, 10, 10, 10) resizingMode:UIImageResizingModeStretch]];
     //文本输入框
     _inputTextView = [[DSInputScrollTextView alloc] initWithFrame:CGRectZero];
     _inputTextView.textColor = [UIColor blackColor];

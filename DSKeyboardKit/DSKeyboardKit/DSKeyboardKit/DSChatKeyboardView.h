@@ -14,6 +14,8 @@
 
 // 工具栏
 @property (nonatomic, strong) DSInputToolView *toolView;
+// 是否正在录音
+@property (assign, nonatomic)    BOOL recording;
 
 /**
  初始化
@@ -23,5 +25,9 @@
  @return 实例
  */
 - (instancetype)initWithFrame:(CGRect)frame config:(DSChatKeyboardConfig *)config;
+
+// 刷新当前键盘状态
+- (void)refreshStatus:(DSInputToolStatus)status;
+
 
 @end

@@ -33,6 +33,10 @@
     DSChatKeyboardConfig *config = [DSChatKeyboardConfig config];
     DSChatKeyboardView *chatKeyboard = [[DSChatKeyboardView alloc] initWithFrame:CGRectMake(0, self.view.height - 54.5, self.view.width, 54.5) config:config];
     chatKeyboard.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    [chatKeyboard refreshStatus:DSInputToolStatusText];
+    
+    
+    
     [self.view addSubview:chatKeyboard];
     self.tableView.height -= chatKeyboard.toolView.height;
 
