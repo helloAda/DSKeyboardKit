@@ -15,7 +15,7 @@
 // 工具栏
 @property (nonatomic, strong) DSInputToolView *toolView;
 // 是否正在录音
-@property (assign, nonatomic)    BOOL recording;
+@property (nonatomic, assign) BOOL recording;
 
 /**
  初始化

@@ -43,6 +43,10 @@
 		0E8E6C94213950A300897899 /* input_emoji_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C82213950A300897899 /* input_emoji_normal@2x.png */; };
 		0E8E6C95213950A300897899 /* input_keyboard_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C83213950A300897899 /* input_keyboard_normal@2x.png */; };
 		0E8E6C96213950A300897899 /* input_more_highlight@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E8E6C84213950A300897899 /* input_more_highlight@3x.png */; };
+		0EABE85E2181C062000F1D8F /* DSInputMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EABE85D2181C062000F1D8F /* DSInputMoreView.m */; };
+		0EABE8612182A549000F1D8F /* DSPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EABE85F2182A548000F1D8F /* DSPageView.m */; };
+		0EABE8642182BF6B000F1D8F /* DSMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EABE8622182BF6B000F1D8F /* DSMediaItem.m */; };
+		0EABE8672182BFC1000F1D8F /* DSInputMoreConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EABE8662182BFC1000F1D8F /* DSInputMoreConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +121,14 @@
 		0E8E6C82213950A300897899 /* input_emoji_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_emoji_normal@2x.png"; sourceTree = "<group>"; };
 		0E8E6C83213950A300897899 /* input_keyboard_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_keyboard_normal@2x.png"; sourceTree = "<group>"; };
 		0E8E6C84213950A300897899 /* input_more_highlight@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "input_more_highlight@3x.png"; sourceTree = "<group>"; };
+		0EABE85C2181C062000F1D8F /* DSInputMoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputMoreView.h; sourceTree = "<group>"; };
+		0EABE85D2181C062000F1D8F /* DSInputMoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputMoreView.m; sourceTree = "<group>"; };
+		0EABE85F2182A548000F1D8F /* DSPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSPageView.m; sourceTree = "<group>"; };
+		0EABE8602182A549000F1D8F /* DSPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSPageView.h; sourceTree = "<group>"; };
+		0EABE8622182BF6B000F1D8F /* DSMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSMediaItem.m; sourceTree = "<group>"; };
+		0EABE8632182BF6B000F1D8F /* DSMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSMediaItem.h; sourceTree = "<group>"; };
+		0EABE8652182BFC1000F1D8F /* DSInputMoreConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSInputMoreConfig.h; sourceTree = "<group>"; };
+		0EABE8662182BFC1000F1D8F /* DSInputMoreConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSInputMoreConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +229,12 @@
 				0E8E6C4D213928E900897899 /* DSInputScrollTextView.m */,
 				0E8E6C4C213928E900897899 /* DSInputTextView.h */,
 				0E8E6C4F213928EA00897899 /* DSInputTextView.m */,
+				0EABE85C2181C062000F1D8F /* DSInputMoreView.h */,
+				0EABE85D2181C062000F1D8F /* DSInputMoreView.m */,
+				0EABE8602182A549000F1D8F /* DSPageView.h */,
+				0EABE85F2182A548000F1D8F /* DSPageView.m */,
+				0EABE8632182BF6B000F1D8F /* DSMediaItem.h */,
+				0EABE8622182BF6B000F1D8F /* DSMediaItem.m */,
 			);
 			path = DSKeyboardKit;
 			sourceTree = "<group>";
@@ -230,6 +248,8 @@
 				0E8E6C56213935AA00897899 /* DSChatKeyboardConfig.m */,
 				0E03386F217EBF730063DA6F /* DSInputToolConfig.h */,
 				0E033870217EBF730063DA6F /* DSInputToolConfig.m */,
+				0EABE8652182BFC1000F1D8F /* DSInputMoreConfig.h */,
+				0EABE8662182BFC1000F1D8F /* DSInputMoreConfig.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -419,6 +439,7 @@
 				0E8E6C6B21393F5400897899 /* DSChatKeyboardView.m in Sources */,
 				0E8E6C51213928EA00897899 /* DSInputTextView.m in Sources */,
 				0E8E6C54213929E000897899 /* UIView+DSCategory.m in Sources */,
+				0EABE8672182BFC1000F1D8F /* DSInputMoreConfig.m in Sources */,
 				0E8E6C6421393A1700897899 /* DSKeyboardEmoticonConfig.m in Sources */,
 				0E39816721805A0B006971C9 /* DemoViewController.m in Sources */,
 				0E8E6C712139461100897899 /* DSInputToolView.m in Sources */,
@@ -427,8 +448,11 @@
 				0E8E6C57213935AA00897899 /* DSChatKeyboardConfig.m in Sources */,
 				0E8E6C29213925AA00897899 /* main.m in Sources */,
 				0E033871217EBF730063DA6F /* DSInputToolConfig.m in Sources */,
+				0EABE8612182A549000F1D8F /* DSPageView.m in Sources */,
 				0E398164218019CF006971C9 /* DSInputAudioRecordView.m in Sources */,
 				0E8E6C1B2139259500897899 /* AppDelegate.m in Sources */,
+				0EABE8642182BF6B000F1D8F /* DSMediaItem.m in Sources */,
+				0EABE85E2181C062000F1D8F /* DSInputMoreView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
