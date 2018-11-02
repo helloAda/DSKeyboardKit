@@ -8,6 +8,7 @@
 
 #import "DemoViewController.h"
 #import "UIView+DSCategory.h"
+#import "DSPageControl.h"
 
 @interface DemoViewController ()
 
@@ -21,25 +22,35 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.estimatedRowHeight = 0;
-    _tableView.estimatedSectionFooterHeight = 0;
-    _tableView.estimatedSectionHeaderHeight = 0;
-    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:self.tableView];
-    
-    DSChatKeyboardConfig *config = [DSChatKeyboardConfig config];
-    DSChatKeyboardView *chatKeyboard = [[DSChatKeyboardView alloc] initWithFrame:CGRectMake(0, self.view.height - 54.5, self.view.width, 54.5) config:config];
-    chatKeyboard.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-    [chatKeyboard refreshStatus:DSInputToolStatusText];
-    
-    
-    
-    [self.view addSubview:chatKeyboard];
-    self.tableView.height -= chatKeyboard.toolView.height;
+//    _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+//    _tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
+//    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    _tableView.estimatedRowHeight = 0;
+//    _tableView.estimatedSectionFooterHeight = 0;
+//    _tableView.estimatedSectionHeaderHeight = 0;
+//    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//    [self.view addSubview:self.tableView];
+//
+//    DSChatKeyboardConfig *config = [DSChatKeyboardConfig config];
+//    DSChatKeyboardView *chatKeyboard = [[DSChatKeyboardView alloc] initWithFrame:CGRectMake(0, self.view.height - 54.5, self.view.width, 54.5) config:config];
+//    chatKeyboard.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+//    [chatKeyboard refreshStatus:DSInputToolStatusText];
+//
+//
+//
+//    [self.view addSubview:chatKeyboard];
+//    self.tableView.height -= chatKeyboard.toolView.height;
 
+    
+    DSPageControl *pageControl = [[DSPageControl alloc] initWithFrame:CGRectMake(0, 300, self.view.width, 40)];
+    pageControl.pageCount = 9;
+    pageControl.selectedPage = 1;
+    pageControl.unSelectedCorlor = [UIColor orangeColor];
+    pageControl.selectedColor = [UIColor redColor];
+    pageControl.indicatorSize = 5;
+    pageControl.interval = 10;
+    pageControl.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:pageControl];
 }
 
 

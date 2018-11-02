@@ -36,7 +36,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         _config = config;
-        
         _pageView = [[DSPageView alloc] initWithFrame:self.bounds];
         _pageView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         _pageView.dataSource = self;
@@ -108,7 +107,7 @@
 - (UIView *)mediaPageView:(DSPageView *)pageView beginItem:(NSInteger)begin endItem:(NSInteger)end {
     UIView *subView = [[UIView alloc] init];
     //间距
-    NSInteger spacing = (self.width - PageColumnCount * ButtonItemWidth) / (PageColumnCount + 1);
+    NSInteger spacing = (self.frame.size.width - PageColumnCount * ButtonItemWidth) / (PageColumnCount + 1);
     NSInteger coloumnIndex = 0; //第几列
     NSInteger rowIndex = 0;     //第几行
     NSInteger indexPage = 0;    //第几个
