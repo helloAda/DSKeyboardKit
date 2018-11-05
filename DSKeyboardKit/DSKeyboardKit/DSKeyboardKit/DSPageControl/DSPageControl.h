@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class DSSelectedIndicator;
+
 @interface DSPageControl : UIView
 
 // 总共多少页
@@ -27,14 +29,20 @@ NS_ASSUME_NONNULL_BEGIN
 // 绑定的滚动视图
 @property (nonatomic, strong) UIScrollView *bindScrollView;
 
+// 相邻的两个圆圈之间的距离
+@property (nonatomic, assign) CGFloat interval;
+
 // 指示的圆圈的大小
 @property (nonatomic, assign) CGFloat indicatorSize;
+
+// 当前指示的圆圈大小
+@property (nonatomic, assign) CGFloat selectedIndicatorSize;
 
 // 横线的高度，只有在需要用横线指示时才有效
 @property (nonatomic, assign) CGFloat lineHeight;
 
-// 相邻的两个圆圈之间的距离
-@property (nonatomic, assign) CGFloat interval;
+// 请只在scrollView滑动时候再调用，否则可能出现初始化问题
+- (DSSelectedIndicator *)selectedIndicator;
 
 @end
 

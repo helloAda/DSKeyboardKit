@@ -43,12 +43,7 @@
 
     
     DSPageControl *pageControl = [[DSPageControl alloc] initWithFrame:CGRectMake(0, 300, self.view.width, 40)];
-    pageControl.pageCount = 9;
-    pageControl.selectedPage = 1;
-    pageControl.unSelectedCorlor = [UIColor orangeColor];
-    pageControl.selectedColor = [UIColor redColor];
-    pageControl.indicatorSize = 5;
-    pageControl.interval = 10;
+    pageControl.pageCount = 28;
     pageControl.backgroundColor = [UIColor blackColor];
     [self.view addSubview:pageControl];
 }

@@ -36,9 +36,11 @@ NS_ASSUME_NONNULL_BEGIN
 // 相邻的两个圆圈之间的距离
 @property (nonatomic, assign) CGFloat interval;
 
-// 绑定的滚动视图
-@property (nonatomic, strong) UIScrollView *bindScrollView;
+// 直线表示时，直线的高度
+@property (nonatomic, assign) CGFloat lineHeight;
 
+// 选中指示 和未选中指示 宽度差值的一半
+@property (nonatomic, assign) CGFloat diffWidth;
 
 @end
 
