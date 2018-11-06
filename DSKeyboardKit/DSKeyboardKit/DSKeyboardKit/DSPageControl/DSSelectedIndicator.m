@@ -9,21 +9,12 @@
 #import "DSSelectedIndicator.h"
 
 @interface DSSelectedIndicator ()
-
 {
     CGFloat _offset;
 }
 @end
 
 @implementation DSSelectedIndicator
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-    }
-    return self;
-}
 
 - (void)scrollToOffset:(CGFloat)offset {
     _offset = offset;
@@ -32,16 +23,19 @@
 
 - (void)moveWithScrollView:(UIScrollView *)scrollView {
     // 当前第几页
-    NSInteger index = scrollView.contentOffset.x / scrollView.contentSize.width;
+    NSInteger index = scrollView.contentOffset.x / scrollView.frame.size.width;
     // 当前页的偏移量
-    CGFloat currentOffsetX = scrollView.contentOffset.x - index * scrollView.contentSize.width;
+    CGFloat currentOffsetX = scrollView.contentOffset.x - index * scrollView.frame.size.width;
     // 当前页偏移量 换算成 指示器的偏移量
     CGFloat offsetX;
     
     // 是圆点的时候
     if (self.indicatorType == DSIndicatorTypeCircle) {
-        offsetX = currentOffsetX / scrollView.contentSize.width * (self.indicatorSize + self.interval);
-        [self scrollToOffset:offsetX];
+        offsetX = currentOffsetX / scrollView.frame.size.width * (self.indicatorSize + self.interval);
+        [self scrollToOffset:index * (self.interval + self.indicatorSize) + offsetX];
+    } else if (self.indicatorType == DSIndicatorTypeLine) {
+        offsetX = currentOffsetX / scrollView.frame.size.width * self.interval;
+        [self scrollToOffset:index * self.interval + offsetX];
     }
 }
 

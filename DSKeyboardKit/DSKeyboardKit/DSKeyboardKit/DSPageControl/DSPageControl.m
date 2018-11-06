@@ -7,7 +7,6 @@
 //
 
 #import "DSPageControl.h"
-#import "DSSelectedIndicator.h"
 #import "UIView+DSCategory.h"
 
 @interface DSPageControl ()
@@ -78,7 +77,7 @@
         else {
             _indicator.indicatorType = DSIndicatorTypeLine;
             width = self.width * 0.7;
-            self.interval = (width - self.selectedIndicatorSize) / self.pageCount;
+            self.interval = (width - self.selectedIndicatorSize) / (self.pageCount - 1);
             _indicator.frame = CGRectMake((self.width - width) / 2, 0, width, self.height);
             _indicator.lineHeight = self.lineHeight;
             _layerRect = _indicator.frame;
